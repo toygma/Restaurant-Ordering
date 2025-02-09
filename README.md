@@ -34,7 +34,7 @@ Lezzet Bahçesi, kullanıcıların favori yemeklerini keşfetmelerine ve sipari�
 
 ## 🔗 Bağlantılar
 
-- **Canlı Demo**: https://lezzetbahcesi.onrender.com
+- **Canlı Demo**: https://restaurant-ordering-687q.onrender.com
 - **Youtube Video**: https://www.youtube.com/watch?v=S5UQe3KUgBk
 
 ---
