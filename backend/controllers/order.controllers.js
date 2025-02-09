@@ -136,13 +136,11 @@ const updateOrderStatus = catchAsyncError(async (req, res, next) => {
 
   const orderSocketID = notifyOrderStatusUpdated(order.user.toString(), order);
   if (orderSocketID) {
-    console.log("Socket ID bulundu, orderStatusUpdated gönderiliyor.");
     io.to(orderSocketID).emit("orderStatusUpdated", {
       order,
       message: "Sipariş durumu güncellendi.",
     });
   } else {
-    console.log("Socket ID bulunamadı, bildirim gönderilemedi.");
   }
 
   await order.save();

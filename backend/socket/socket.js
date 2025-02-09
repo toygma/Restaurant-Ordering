@@ -20,7 +20,6 @@ const userSocketMap = {};
 const adminSocketMap = {};
 let userCount = 0;
 io.on("connection", (socket) => {
-  console.log("Yeni bir socket bağlandı:", socket.id);
 
   const userId = socket.handshake.query.userId;
   const role = socket.handshake.query.role;
@@ -49,7 +48,6 @@ io.on("connection", (socket) => {
 
 export const notifyOrderStatusUpdated = (userId, order) => {
   const socketId = userSocketMap[userId];
-  console.log("🚀 ~ notifyOrderStatusUpdated ~ socketId:", socketId);
   if (socketId) {
     io.to(socketId).emit("orderStatusUpdated", {
       message: "Sipariş durumunuz güncellendi.",

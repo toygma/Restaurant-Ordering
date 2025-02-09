@@ -5,7 +5,7 @@ const TableData = ({ data, deleteProduct }) => {
     new Set(data?.product?.map((item) => item.user?.name))
   );
   const categories = Array.from(
-    new Set(data?.product?.map((item) => item.category.name))
+    new Set(data?.product?.map((item) => item?.category?.name))
   );
 
   const handleRemoveProduct = (id) => {
@@ -19,11 +19,11 @@ const TableData = ({ data, deleteProduct }) => {
         target: "full-header",
       },
       filters: data?.product?.map((option) => ({
-        text: option.productDetail.title,
-        value: option.productDetail.title,
+        text: option?.productDetail?.title,
+        value: option?.productDetail?.title,
       })),
-      onFilter: (value, record) => record.productDetail.title === value,
-      render: (productDetail) => productDetail.title,
+      onFilter: (value, record) => record?.productDetail?.title === value,
+      render: (productDetail) => productDetail?.title,
     },
     {
       title: "Ürün Açıklaması",
@@ -37,13 +37,13 @@ const TableData = ({ data, deleteProduct }) => {
     {
       title: "Ürün Kategorisi",
       dataIndex: "category",
-      filters: categories.map((category) => ({
+      filters: categories?.map((category) => ({
         text: category,
         value: category,
       })),
-      onFilter: (value, record) => record.category.name === value,
+      onFilter: (value, record) => record?.category?.name === value,
       render: (record) => {
-        return <span>{record.name}</span>;
+        return <span>{record?.name}</span>;
       },
     },
     {
@@ -53,8 +53,8 @@ const TableData = ({ data, deleteProduct }) => {
       render: (record) => {
         return (
           <ul>
-            {record.sideProductValue.map((item) => (
-              <li key={item._id}>{item.sideProduct}</li>
+            {record?.sideProductValue?.map((item) => (
+              <li key={item?._id}>{item?.sideProduct}</li>
             ))}
           </ul>
         );
@@ -63,11 +63,11 @@ const TableData = ({ data, deleteProduct }) => {
     {
       title: "Ürünü oluşturan kişi",
       dataIndex: "user",
-      filters: users.map((user) => ({
+      filters: users?.map((user) => ({
         text: user,
         value: user,
       })),
-      onFilter: (value, record) => record.user?.name === value,
+      onFilter: (value, record) => record?.user?.name === value,
       render: (_, record) => <span>{record?.user?.name}</span>,
     },
     {
@@ -76,7 +76,7 @@ const TableData = ({ data, deleteProduct }) => {
       render: (_, record) => (
         <ul>
           <Button
-            onClick={() => handleRemoveProduct(record._id)}
+            onClick={() => handleRemoveProduct(record?._id)}
             type="primary"
           >
             Sil
@@ -88,7 +88,7 @@ const TableData = ({ data, deleteProduct }) => {
 
   const dataSource = data?.product?.map((item) => ({
     ...item,
-    key: item._id,
+    key: item?._id,
   }));
   return (
     <Table

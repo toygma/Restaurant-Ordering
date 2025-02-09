@@ -72,7 +72,6 @@ const StaticModalForm = ({ setStaticModal, staticModal }) => {
   };
 
   const handleDeleteClick = (id) => {
-    console.log(id);
     deleteAbout(id);
   };
 

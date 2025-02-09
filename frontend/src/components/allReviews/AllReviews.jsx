@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { getDateLocal } from "../../helpers/helpers";
 const AllReviews = ({ review, data }) => {
   const role = review?.user?.role === "admin" ? "(admin)" : "";
-  const productId = data.product._id;
+  const productId = data?.product?._id;
   const { user } = useSelector((state) => state.auth);
   const eq = user?._id === review?.user?._id;
 

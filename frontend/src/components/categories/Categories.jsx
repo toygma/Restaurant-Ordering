@@ -12,7 +12,7 @@ const CatagoriesAndMenu = () => {
   const [visibleCount, setVisibleCount] = useState(5);
   const products = data?.product || [];
   const uniqueCategories = Array.from(
-    new Set(data?.product?.map((item) => item.category.name))
+    new Set(data?.product?.map((item) => item?.category?.name))
   );
   const fetchMoreData = () => {
     setVisibleCount((prevCount) => prevCount + 5);
@@ -47,7 +47,7 @@ const CatagoriesAndMenu = () => {
                 Hepsi
               </h1>
             </div>
-            {uniqueCategories.map((categoryName) => (
+            {uniqueCategories?.map((categoryName) => (
               <div
                 key={categoryName}
                 className={`flex flex-col items-center gap-2 border-b-2 cursor-pointer overflow-hidden transition-all duration-300 transform ${
@@ -59,9 +59,9 @@ const CatagoriesAndMenu = () => {
               >
                 <img
                   src={
-                    data.product.find(
-                      (item) => item.category.name === categoryName
-                    )?.category.image
+                    data?.product?.find(
+                      (item) => item?.category?.name === categoryName
+                    )?.category?.image
                   }
                   alt={categoryName}
                   className="w-40 h-40 object-cover transition-transform duration-500 rounded-lg shadow-md hover:shadow-xl"
@@ -84,9 +84,9 @@ const CatagoriesAndMenu = () => {
             }
           >
             <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-              {products.slice(0, visibleCount).map((product) => {
-                if (category === "All" || category === product.category.name) {
-                  return <MenuItem key={product._id} {...product} />;
+              {products?.slice(0, visibleCount).map((product) => {
+                if (category === "All" || category === product?.category?.name) {
+                  return <MenuItem key={product?._id} {...product} />;
                 }
                 return null;
               })}

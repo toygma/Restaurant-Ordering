@@ -13,7 +13,7 @@ const PopularMenu = () => {
   if (isLoading) return <Loading />;
 
   const filteredMenu =
-    data?.product.filter((item) => item.category.name === category) || [];
+    data?.product?.filter((item) => item?.category?.name === category) || [];
   return (
     <div className="min-h-screen mt-24">
       <Title title="Popüler Yiyecekler" titleSub={"Öğünlerimiz"} />

@@ -18,10 +18,17 @@ const Search = () => {
   const ratings = searchParams.get("ratings");
   const params = { page, search };
 
+  useEffect(() => {
+    if (category && search) {
+      searchParams.delete("query");
+      setSearchParams(searchParams);
+    }
+  }, [category, search, setSearchParams]);
+
   min !== null && (params.min = min);
   max !== null && (params.max = max);
 
-  category !== null && (params.category = category);
+  category !== null &&  (params.category = category);
   ratings !== null && (params.ratings = ratings);
 
   const { data, isError, error, isLoading } = useGetAllProductsQuery(params);

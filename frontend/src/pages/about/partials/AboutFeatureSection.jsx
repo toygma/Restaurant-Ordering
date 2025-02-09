@@ -43,7 +43,7 @@ const AboutFeatureSection = () => {
   }
   return (
     <React.Fragment>
-      <div className="mt-12 grid custom:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 ">
+      {/* <div className="mt-12 grid custom:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 ">
         {sectionField.map((item) => (
           <div
             key={item.id}
@@ -119,7 +119,7 @@ const AboutFeatureSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

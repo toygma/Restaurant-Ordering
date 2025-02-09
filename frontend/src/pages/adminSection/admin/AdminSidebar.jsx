@@ -47,7 +47,6 @@ const adminMenu = [
   },
   {
     name: "Kullanıcılar",
-    url: "/admin/users",
     icon: <Users />,
     submenu: [
       {
@@ -58,6 +57,11 @@ const adminMenu = [
       {
         name: "Rezervasyonlar",
         url: "/admin/reservation",
+        icon: <FaRegUser />,
+      },
+      {
+        name: "Kullanıcılar",
+        url: "/admin/users",
         icon: <FaRegUser />,
       },
     ],

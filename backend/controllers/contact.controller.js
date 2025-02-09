@@ -17,7 +17,6 @@ const sendMessage = catchAsyncError(async (req, res, next) => {
       pass: process.env.APP_PASSWORD,
     },
   });
-
   const messageTemplate = {
     from: `<${email}>`,
     to: process.env.SMTP_TO_EMAIL,

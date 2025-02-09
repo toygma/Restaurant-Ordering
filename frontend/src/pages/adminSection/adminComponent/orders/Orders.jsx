@@ -52,7 +52,6 @@ function Orders() {
   }, [error, isSuccess]);
 
   const handleStatusChange = (status, id) => {
-    console.log("🚀 ~ handleStatusChange ~ id:", id);
     updateOrder({ id, body: { status } });
   };
 

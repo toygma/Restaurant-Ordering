@@ -49,7 +49,6 @@ const TableData = ({ data, handleRemoveReview }) => {
     },
   ];
 
-  console.log(data);
   const setReviews = () => {
     const reviewsList = [];
     data?.product?.forEach((product) => {
