@@ -1,3 +1,6 @@
+email : utkutoygunbektasoglu@gmail.com
+şifre : 123123
+
 # 🎉 Lezzet Bahçesi Restoran Sitesi
 
 **Hoş geldiniz!** Lezzet Bahçesi, kullanıcı dostu bir arayüzle lezzetli yemeklerinizi kolayca sipariş edebileceğiniz bir restoran platformudur. Bu projede, hem kullanıcılar hem de yöneticiler için kapsamlı bir deneyim sunuyoruz.
