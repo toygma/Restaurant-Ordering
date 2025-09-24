@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 // Vite konfigürasyonu
 export default defineConfig(() => {
@@ -7,6 +8,6 @@ export default defineConfig(() => {
     server: {
       host: true,
     },
-    plugins: [react()],
+    plugins: [react(), tailwindcss()],
   };
 });
